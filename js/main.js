@@ -1,5 +1,5 @@
 import Card from "./card.js"
-
+const audioCorrectAnswer = document.querySelector("#correct");
 newGame(document.getElementById('game'), 6);
 
     let buttons = document.querySelectorAll('.btn');
@@ -60,6 +60,7 @@ function newGame(container, cardsCount){
         }
         if(firstCard !== null && secondCard!== null) {
             if(firstCard.number == secondCard.number) {
+                audioCorrectAnswer.play();
                 firstCard.success = true;
                 secondCard.success = true;
                 firstCard = null;
